@@ -1,0 +1,19 @@
+configuration:
+  Properties:
+    Property:
+      name: logger
+      value: logs_folder
+
+  Appenders:
+    Console:
+      - name: myConsole
+        PatternLayout:
+          disableAnsi: false
+          Pattern:  "%highlight{%-5level}{FATAL=bg_red}	%style{%date{yyyy-MM-dd  HH:mm:ss.SSS}}{blue} %class{1}:%L - %highlight{%msg} %xEx{short}%n"
+
+  Loggers:
+    Root:
+      level: all
+      AppenderRef:
+        - ref: myConsole
+          level: all
